@@ -4,7 +4,8 @@ juke.config(function ($stateProvider) {
 
   $stateProvider.state('albums', {
     url: '/albums',
-    templateUrl: '/js/album/templates/albums.html',
+    template: "<album-list albums='albums' ></album-list>",
+    //templateUrl: '/js/album/templates/albums.html',
     controller: 'AlbumsCtrl',
     resolve: {
       allAlbums: function (AlbumFactory) {
@@ -15,6 +16,7 @@ juke.config(function ($stateProvider) {
 
   $stateProvider.state('album', {
     url: '/albums/:albumId',
+    //template: "<song-list songs='album.songs'></song-list>",
     templateUrl: '/js/album/templates/album.html',
     controller: 'AlbumCtrl',
     resolve: {

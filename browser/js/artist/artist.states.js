@@ -4,6 +4,7 @@ juke.config(function ($stateProvider) {
 
   $stateProvider.state('artists', {
     url: '/artists',
+    
     templateUrl: '/js/artist/templates/artists.html',
     controller: 'ArtistsCtrl',
     resolve: {
@@ -26,12 +27,14 @@ juke.config(function ($stateProvider) {
 
   $stateProvider.state('artist.albums', {
     url: '/albums',
-    templateUrl: '/js/artist/templates/artist-albums.html'
+    template: "<album-list albums='artist.albums' ></album-list>",
+    //templateUrl: '/js/artist/templates/artist-albums.html'
   });
 
   $stateProvider.state('artist.songs', {
     url: '/songs',
-    templateUrl: '/js/artist/templates/artist-songs.html'
+    template: "<song-list songs='artist.songs'></song-list>"
+    //templateUrl: '/js/artist/templates/artist-songs.html'
   });
 
 });

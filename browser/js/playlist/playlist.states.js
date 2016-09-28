@@ -10,6 +10,7 @@ juke.config(function ($stateProvider) {
 
   $stateProvider.state('playlist', {
     url: '/playlists/:playlistId',
+    // template: "<song-list songs='playlist.songs'></song-list>",
     templateUrl: '/js/playlist/templates/playlist.html',
     controller: 'PlaylistCtrl',
     resolve: {
